@@ -3,7 +3,7 @@ name: Deploy Blog
 on:
   push:
     branches:
-      - main  # 或你的主分支名
+      - main
 
 jobs:
   build-and-deploy:
@@ -11,6 +11,8 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: recursive
       
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
